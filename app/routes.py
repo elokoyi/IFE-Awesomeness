@@ -26,7 +26,7 @@ events = [
 @app.route('/index')
 
 def index():
-    return render_template('index.html', events = events)
+    return render_template('index.html')
 
 
 # CONNECT TO DB, ADD DATA
