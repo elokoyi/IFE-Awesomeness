@@ -31,12 +31,12 @@ def index():
 
 # CONNECT TO DB, ADD DATA
 
-@app.route('/add')
+#@app.route('/add')
 
-def add():
+#def add():
     # connect to the database
 
     # insert new data
 
     # return a message to the user
-    return ""
+   # return ""
