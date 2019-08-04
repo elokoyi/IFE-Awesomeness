@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign up - Twenty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="signup is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="/">CONNECT <span>Lark</span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="/">Welcome</a></li>
+						<li class="submenu">
+								EXPLORE
+								<ul>
+									<li><a href="no-sidebar.html">Information</a></li>
+									<li><a href="left-sidebar.html">Schools</a></li>
+									<li><a href="right-sidebar.html">Beyond the Classrom</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li class="submenu">
+										<a href="signup.html">Sign Up Now</a>
+										<ul>
+											<li><a href="leftsidebar.html">I am a Teacher...</a></li>
+											<li><a href="signup.html">I am a Parent...</a></li>
+											<li><a href="signup.html">I am a Student...</a></li>
+											<li><a href="#">FAQ</a></li>
+											<!--<li><a href="#">Ipsum Nisl</a></li>-->
+										</ul>
+									</li>
+						    	</li>
+        							<!--<li><a href="#" class="button primary">Sign Up</a></li>-->
+        						</ul>
+        					</nav>
+        				</header>
+        		</ul>	<!-- Main -->
+        	<article id="main">
+        
+        					<header class="special container">
+        						<span class="icon solid fa-envelope"></span>
+        			<div class="signuppage">
+        					<h2><strong>Enter your Information</strong></h2>
+
+        						<h4><strong>Fill out the boxes and tell us a little about yourself.</strong></h4>
+        						
+        		  </div class="signuppage">
+        					</header>
+        
+        					<!-- One -->
+        			<section class="wrapper style4 special container medium">
+                      	<div class="content">
+        						<br>
+        			<div class="row gtr-50">
+        				 {% if 'username' not in session: %}
+					      <h4>If you already have an account, log in</h4>
+					      <form method='POST' action ='/login'>
+					        Username:
+					        <input type='text' name='username'>
+					        Password:
+					        <input type='text' name='password'>
+					        <input type='submit' value = 'Submit'>
+					      </form>
+					      {% else: %}
+					      <p>You are logged in as {{session['username']}}</p>
+					      <a href='/logout'>Log out</a>
+					      {% endif %}
+        								
+        				<form method="POST" action = '/signup'>
+        					<div class="col-6 col-12-mobile">
+							 Username: 
+							<input type="text" name="username" placeholder="Username">
+							</div>
+							<div class="col-6 col-12-mobile">
+							 Password:
+							<input type="password" name="password" placeholder="Password">
+							</div>
+							<div class="col-6 col-12-mobile">
+        					 Full Name:
+        					<input type="text" name="name" placeholder="Full Name" />
+        					</div>
+        					<div class="col-6 col-12-mobile">
+        					 Email Address:
+        					<input type="text" name="email" placeholder="Email" />
+        					</div>
+        						<input type = 'submit' value = 'Get Started'>
+							
+<!--        					<div id="signupcheck">-->
+<!--        			<div class="box">-->
+<!--<input type='checkbox' name='thing' value='valuable' id="thing"/><label for="thing"></label> <label>get an army</label>-->
+<!--<br>-->
+<!--<input type='checkbox' name='thing1' value='valuable2' id="thing1"/><label for="thing1"></label> <label>free the slaves</label>-->
+<!--<br>-->
+<!--<input type='checkbox' name='thing2' value='valuable3' id="thing2"/><label for="thing2"></label> <label>train my dragons</label>-->
+<!--<br>-->
+
+<!--<input type='checkbox' name='thing3' value='valuable4' id="thing3"/><label for="thing3"></label> <label>cross the narrow sea</label>-->
+<!--<br>-->
+<!--<input type='checkbox' name='thing4' value='valuable5' id="thing4"/><label for="thing4"></label> <label>become Queen of Westeros</label>-->
+<!--</div>-->
+<!--</div>-->
+							
+						</form>
+										
+													 
+													     
+							
+						
+					</div>
+						
+        		  </ul>
+        		  </div>
+        		  
+        									
+        		</section>
+        	</article>
+        
+        			<!-- Footer -->
+        				<footer id="footer">
+        
+        					<ul class="icons">
+        						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+        						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+        						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
+        						<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
+        						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+        					</ul>
+        
+        					<ul class="copyright">
+        						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        					</ul>
+        
+        				</footer>
+        
+        		</div>
+        
+        		<!-- Scripts -->
+        			<script src="/static/assets/js/jquery.min.js"></script>
+        			<script src="/static/assets/js/jquery.dropotron.min.js"></script>
+        			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+        			<script src="/static/assets/js/jquery.scrollgress.min.js"></script>
+        			<script src="/static/assets/js/jquery.scrollex.min.js"></script>
+        			<script src="/static/assets/js/browser.min.js"></script>
+        			<script src="/static/assets/js/breakpoints.min.js"></script>
+        			<script src="/static/assets/js/util.js"></script>
+        			<script src="/static/assets/js/main.js"></script>
+        
+        	</body>
+        	
+        </html>
+        							
+        				              
