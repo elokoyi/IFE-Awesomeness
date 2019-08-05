@@ -3792,8 +3792,8 @@ input, select, textarea {
 
 
 		}
-			#gameimg{
-				background-image: url("https://cdn1.vectorstock.com/i/1000x1000/04/10/online-and-mobile-game-icons-vector-3850410.jpg");
+		/*	#gameimg{*/
+		/*		background-image: url("https://cdn1.vectorstock.com/i/1000x1000/04/10/online-and-mobile-game-icons-vector-3850410.jpg");*/
 					/*background-attachment: scroll, scroll, scroll, fixed;*/
 		/*background-repeat: no-repeat;*/
 		/*width: 100%;*/
@@ -3801,13 +3801,13 @@ input, select, textarea {
 
 	 	 /* Center and scale the image nicely */
 		/*background-position: center;	*/
-		background-size: cover;
+		/*background-size: cover;*/
 	
 		/*cursor: default;*/
 			
 		/*padding: 6em 0;*/
 		/*text-align: center;*/
-			}
+		/*	}*/
 /* Menu */
 
 	#menu {

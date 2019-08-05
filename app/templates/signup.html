@@ -53,49 +53,81 @@
         
         					<!-- One -->
         			<section class="wrapper style4 special container medium">
-                      	<div class="content">
+                      	<!--<div class="content">-->
         						<br>
-        			<div class="row gtr-50">
+        			<!--<div class="row gtr-50">-->
+        			
         				 {% if 'username' not in session: %}
-					      <h4>If you already have an account, log in</h4>
+					      <h4>If you already have an account, log in:</h4>
 					      <form method='POST' action ='/login'>
+					        <div id="col-6-col-12-mobile">
 					        Username:
-					        <input type='text' name='username'>
+					        <br/>
+					        <input type='text' name='username' placeholder = "Username">
+					        </div>
+					        <div id="col-6-col-12-mobile">
 					        Password:
-					        <input type='text' name='password'>
-					        <input type='submit' value = 'Submit'>
+					        <br/>
+					        <input type='text' name='password' placeholder="Password">
+					        </div><br/>
+					        <input style="background-color:#8EE1C8;" type='submit' value = 'Submit'>
 					      </form>
-					      {% else: %}
-					      <p>You are logged in as {{session['username']}}</p>
-					      <a href='/logout'>Log out</a>
-					      {% endif %}
-        								
+					      <br/>
+					      
         				<form method="POST" action = '/signup'>
-        					<div class="col-6 col-12-mobile">
-							 Username: 
+        					<div id="col-6-col-12-mobile">
+							 Username(This is what you will be called by): 
+							 <br/>
 							<input type="text" name="username" placeholder="Username">
 							</div>
-							<div class="col-6 col-12-mobile">
+							<div id="col-6-col-12-mobile">
 							 Password:
+							 <br/>
 							<input type="password" name="password" placeholder="Password">
 							</div>
-							<div class="col-6 col-12-mobile">
+							<div id="col-6-col-12-mobile">
         					 Full Name:
+        					 <br/>
         					<input type="text" name="name" placeholder="Full Name" />
         					</div>
-        					<div class="col-6 col-12-mobile">
+        					<div id="col-6-col-12-mobile">
         					 Email Address:
+        					 <br/>
         					<input type="text" name="email" placeholder="Email" />
-        					</div>
-        						<div class="col-12">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Age -</option>
+        					</div><br/>
+        					
+        						<div class = "signupdropdowns">
+        							<ul>
+												<select style = "width: 200px;" >
+													<option value="">-  Age -</option>
 													<option value="1">2-5 years old</option>
 													<option value="1">6-10 years old</option>
 													<option value="1">11-14 years old</option>
 													<option value="1">15+ years old</option>
-												</select>
-        						<input type = 'submit' value = 'Get Started'>
+												</select><br/>
+								                 <br/>
+									
+												<select style = "width: 200px;">
+													<option value="">- Gender -</option>
+													<option value="1">Female</option></option>
+													<option value="1">Male</option>
+													<option value="1">Non-binary</option>
+													<option value="1">Prefer not to specify</option>
+												</select><br/>
+												 <br/>
+										
+												<select style = "width: 200px;">
+													<option value="">- ADHD Type -</option>
+													<option value="1">Combined presentation</option></option>
+													<option value="1">Predominantly inattentive ADHD</option>
+													<option value="1">Predominantly hyperactive-impulsive </option>
+			
+												</select><br/>
+									</ul>
+								</div>
+								<div id="signupbutton">
+        						<input style="background-color:#8EE1C8;" type = 'submit' value = 'Get Started'>
+        						</div>
 							
 <!--        					<div id="signupcheck">-->
 <!--        			<div class="box">-->
@@ -113,7 +145,10 @@
 <!--</div>-->
 							
 						</form>
-										
+						  {% else: %}
+					      <p>You are logged in as {{session['username']}}</p>
+					      <a href='/logout'>Log out</a>
+					      {% endif %}				
 													 
 													     
 							

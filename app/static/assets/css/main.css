@@ -1226,6 +1226,23 @@ input, select, textarea {
 						}
 
 		}
+		#col-6-col-12-mobile{
+			padding: 12px;
+			text-align: left;
+		}
+		#signupbutton
+		{
+			padding: 12px;
+		}
+		.signupdropdowns{
+			/*padding: 50px;*/
+			/*width: 200px;*/
+			/*height: 30px;*/
+			/*float: left;*/
+			margin-right: 800px;
+			max-width: px;
+			
+		}
 		
 	.col-12{
 		padding: 20px;

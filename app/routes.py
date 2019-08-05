@@ -1,6 +1,6 @@
 import os
 from app import app
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, session, url_for
 
 app.secret_key = b'\xb1\xe2\x9fs1I\x80\x7f\xd1\xd6 \xf3\xear\xfb\x06'
 
@@ -52,7 +52,12 @@ def home():
 @app.route('/index-new.html', methods = ["GET", "POST"])
 def info():
     users = mongo.db.users
-    return render_template("index-new.html")
+    existing_user = users.find_one({"username":request.form['username']})
+    return render_template("index-new.html", existing_user = existing_user)
+    
+@app.route('/contact.html', methods = ["GET", "POST"])
+def contact(): 
+    return render_template("contact.html")
 
 
 # SIGN-UP:
@@ -64,9 +69,10 @@ def signup():
         existing_user = users.find_one({"username":request.form['username']})
         if existing_user is None:
             users.insert({"username":request.form['username'],"password":request.form['password'],"email":request.form['email'],"name":request.form['name']})
-            return render_template("index-new.html")
+            session['username'] = request.form['username']
+            return render_template("index-new.html",  username = session['username'] )
         else:
-            return render_template("/useduser.html")
+            return render_template("useduser.html")
     else:
         return redirect("/index")
         
@@ -80,12 +86,12 @@ def login():
     if existing_user:
         # check if the password is right
         if existing_user['password'] == request.form['password'] :
-            # session['username'] = request.form['username']
-            return render_template("index-new.html", existing_user = existing_user)
+            session['username'] = request.form['username']
+            return render_template("index-new.html", username = session['username'])
         else:
-            return "Your password doesn't match your username."
+            return  render_template("useduser.html")
     else:
-        return "There is no user with that username. Try making an account."
+        return  render_template("useduser.html")
   
 #   LOG OUT
 @app.route('/logout')

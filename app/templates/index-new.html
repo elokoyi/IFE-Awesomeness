@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>CONNECT</strong> <span>App</span></a>
+						<a href="/" class="logo"><strong>CONNECT</strong> <span>App</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -31,11 +31,11 @@
 							<li><a href="/">Home</a></li>
 							<li><a href="landing.html">Profile</a></li>
 							<li><a href="generic.html">Settings</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<!--<li><a href="elements.html">Elements</a></li>-->
 						</ul>
 						<ul class="actions stacked">
 							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log Out</a></li>
+							<li><a href="/logout" class="button fit">Log Out</a></li>
 						</ul>
 					</nav>
 
@@ -44,7 +44,7 @@
 						<div class="inner">
 							<header class="major">
 								<h1>Hello,
-										{{ existing_user.username }}! </h1>
+										{{ username }} ! </h1>
 							</header>
 							<div class="content">
 								<p>WELCOME TO YOUR OWN CONNECT ACCOUNT.<br />
@@ -64,7 +64,7 @@
 								<article>
 									<div id="gameimg">
 									<span class="image">
-										<img src="../../images/gaming.jpg" alt="" />
+										<img src="/images/gaming.jpg" alt="" />
 									</span>
 										</div>
 									<header class="major">
