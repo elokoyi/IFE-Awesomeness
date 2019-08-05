@@ -46,12 +46,13 @@ def signuppage():
     return render_template("signup.html")
 
 @app.route('/home.html', methods = ["GET", "POST"])
-def home():
+def home(): 
     return render_template("home.html")
     
-# @app.route('/info.html', methods = ["GET", "POST"])
-# def info():
-#     return render_template("")
+@app.route('/index-new.html', methods = ["GET", "POST"])
+def info():
+    users = mongo.db.users
+    return render_template("index-new.html")
 
 
 # SIGN-UP:
@@ -63,7 +64,7 @@ def signup():
         existing_user = users.find_one({"username":request.form['username']})
         if existing_user is None:
             users.insert({"username":request.form['username'],"password":request.form['password'],"email":request.form['email'],"name":request.form['name']})
-            return render_template("info.html")
+            return render_template("index-new.html")
         else:
             return render_template("/useduser.html")
     else:
@@ -80,7 +81,7 @@ def login():
         # check if the password is right
         if existing_user['password'] == request.form['password'] :
             # session['username'] = request.form['username']
-            return redirect(url_for('home'))
+            return render_template("index-new.html", existing_user = existing_user)
         else:
             return "Your password doesn't match your username."
     else:
