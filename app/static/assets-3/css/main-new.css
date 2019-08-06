@@ -2159,7 +2159,11 @@ input, select, textarea {
 	}
 
 /* Image */
-
+	/*#statpic{*/
+	/*	width: 100px;*/
+	/*	height:  100px;*/
+		/*padding: 20px;*/
+	/*}*/
 	.image {
 		border: 0;
 		display: inline-block;

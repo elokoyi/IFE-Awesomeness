@@ -93,7 +93,12 @@
         					<div id="col-6-col-12-mobile">
         					 Email Address:
         					 <br/>
-        					<input type="text" name="email" placeholder="Email" />
+        					<input type="email" name="email" placeholder="Email" />
+        					</div>
+        					<div id="col-6-col-12-mobile">
+        					Medications(if applicable):
+        					 <br/>
+        					<input type="text" name="meds" placeholder="Medication" />
         					</div><br/>
         					
         						<div class = "signupdropdowns">
@@ -123,31 +128,21 @@
 													<option value="1">Predominantly hyperactive-impulsive </option>
 			
 												</select><br/>
+												
+												
 									</ul>
 								</div>
 								<div id="signupbutton">
         						<input style="background-color:#8EE1C8;" type = 'submit' value = 'Get Started'>
         						</div>
 							
-<!--        					<div id="signupcheck">-->
-<!--        			<div class="box">-->
-<!--<input type='checkbox' name='thing' value='valuable' id="thing"/><label for="thing"></label> <label>get an army</label>-->
-<!--<br>-->
-<!--<input type='checkbox' name='thing1' value='valuable2' id="thing1"/><label for="thing1"></label> <label>free the slaves</label>-->
-<!--<br>-->
-<!--<input type='checkbox' name='thing2' value='valuable3' id="thing2"/><label for="thing2"></label> <label>train my dragons</label>-->
-<!--<br>-->
 
-<!--<input type='checkbox' name='thing3' value='valuable4' id="thing3"/><label for="thing3"></label> <label>cross the narrow sea</label>-->
-<!--<br>-->
-<!--<input type='checkbox' name='thing4' value='valuable5' id="thing4"/><label for="thing4"></label> <label>become Queen of Westeros</label>-->
-<!--</div>-->
-<!--</div>-->
 							
 						</form>
 						  {% else: %}
 					      <p>You are logged in as {{session['username']}}</p>
-					      <a href='/logout'>Log out</a>
+					      <a href='/logout'>Log out</a><br/>
+					      <a href="/">Home Page</a>
 					      {% endif %}				
 													 
 													     

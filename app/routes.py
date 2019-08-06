@@ -44,16 +44,11 @@ def mission():
 @app.route('/signup.html', methods = ["GET", "POST"])
 def signuppage():
     return render_template("signup.html")
-
-@app.route('/home.html', methods = ["GET", "POST"])
-def home(): 
-    return render_template("home.html")
     
 @app.route('/index-new.html', methods = ["GET", "POST"])
-def info():
+def home():
     users = mongo.db.users
-    existing_user = users.find_one({"username":request.form['username']})
-    return render_template("index-new.html", existing_user = existing_user)
+    return render_template("index-new.html")
     
 @app.route('/contact.html', methods = ["GET", "POST"])
 def contact(): 
@@ -63,7 +58,7 @@ def contact():
 # SIGN-UP:
 @app.route('/signup', methods=['GET','POST'])
 def signup():
-    if request.method =="POST":
+    if request.method =="POST" or "GET":
         # take in the info they gave us, check if username is taken, if username is available put into a database of user
         users = mongo.db.users
         existing_user = users.find_one({"username":request.form['username']})
@@ -78,7 +73,7 @@ def signup():
         
 
 #Log In:
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     users = mongo.db.users
     # use the username to find the account
