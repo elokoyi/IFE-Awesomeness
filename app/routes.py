@@ -40,7 +40,6 @@ def lefttsidebar():
 def mission():
     return render_template("mission.html")
     
-
 @app.route('/signup.html', methods = ["GET", "POST"])
 def signuppage():
     return render_template("signup.html")
@@ -53,6 +52,16 @@ def home():
 @app.route('/contact.html', methods = ["GET", "POST"])
 def contact(): 
     return render_template("contact.html")
+    
+@app.route('/game-1.html', methods = ["GET", "POST"])
+def game(): 
+    return render_template("game-1.html")
+@app.route('/goals.html', methods = ["GET", "POST"])
+def goals(): 
+    return render_template("goals.html")
+@app.route('/goaltoday.html', methods = ["GET", "POST"])
+def goaltoday(): 
+    return render_template("goaltoday.html")
 
 
 # SIGN-UP:
@@ -93,6 +102,24 @@ def login():
 def logout():
     session.clear()
     return redirect('/')
-
+    
+#Set a goal
+@app.route('/setgoal', methods=['GET','POST'])
+def setgoal():
+    goals = mongo.db.goals
+    if request.method =="POST" or "GET":
+        # take in the info they gave us
+        goals.insert({"goals":request.form['goals'],"goal-step1":request.form['goal-step1'], "goal-step2":request.form['goal-step2'],"goal-step3":request.form['goal-step3'], "goal-explain":request.form['goal-explain']})
+        session['goals'] = request.form['goals']
+        session['goal-step1'] = request.form['goal-step1']
+        session['goal-step2'] = request.form['goal-step2']
+        session['goal-step3'] = request.form['goal-step3']
+        session['goal-explain'] = request.form['goal-explain']
+        return render_template("goaltoday.html",  goals = session['goals'], goal_step1 = session['goal-step1'],goal_step2 = session['goal-step2'],goal_step3 = session['goal-step3'],goal_explain = session['goal-explain'] )
+    else:
+        return redirect("/index-new")
+        
+        
+            
 
 
